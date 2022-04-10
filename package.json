@@ -1,6 +1,6 @@
 {
   "name": "register",
-  "homepage": "http://seminario-blc.online/",
+  "homepage": "http://seminario-blc.online",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
