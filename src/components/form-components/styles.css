@@ -1,0 +1,43 @@
+.form-container {
+  color: #F9F5F1;
+}
+
+.phone-container {
+  color: #F9F5F1;
+  margin-top: 35px;
+}
+
+.select-text {
+  color: #F9F5F1;
+  font-size: larger;
+  margin-bottom: 35px;
+}
+
+.PhoneInput { 
+  padding-top: 20px;
+}
+
+.PhoneInputInput { 
+  max-width: 220px;
+  margin-top: -40px;
+  background-color: rgba(157,	2,	100, 0.5);
+  color: #F9F5F1;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  border-color: #F9F5F1;
+ 
+}
+
+.text-input {
+  width: 220px;
+  background-color: rgba(157,	2,	100, 0.5);
+  color: #F9F5F1;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  border-color: #F9F5F1;
+
+}
+.error-input {
+  color: #FDAAAA;
+  font-size: medium;
+}

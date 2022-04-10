@@ -1,0 +1,32 @@
+html,
+input,
+button {
+  font-size: 20px;
+  font-family: sans-serif;
+
+}
+
+html { 
+  background: url('./assets/img/background.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+div {
+  margin: 0 0 1rem;
+}
+
+input,
+textarea,
+button {
+  padding: 0.3rem;
+  border: solid 2px black;
+  border-radius: 0.2rem;
+}
+
+textarea {
+  width: 300px;
+  height: 150px;
+}

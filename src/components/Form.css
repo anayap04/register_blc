@@ -1,0 +1,25 @@
+.no-uid {
+  flex-direction: row;
+  color: #CFCCC5;
+}
+.form-container {
+  width: auto;
+  color: #CFCCC5;
+  padding-left: 50px;
+}
+
+.error-text {
+  color: #F2AD9C;
+  font-size: x-large;
+}
+
+.submit-button {
+  width: 90%;
+  background-color: #9E845B;
+  border-color: #CFCCC5;
+  color: #e2ded6;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Nombre(s)",
+  "lastName": "Apellido(s)",
+  "noUID": "No poseo UID",
+  "uid": "UID",
+  "mail": "Correo Electrónico",
+  "code": "Código de Compra",
+  "wa": "WhatsApp",
+  "selectEvent": "Selecciona el evento al que desea atender.",
+  "eventArg": "Paraná, Argentina – 28 de Mayo",
+  "eventMex": "CDMX, México – 4 de Junio",
+  "eventUru": "Montevideo, Uruguay – 5 de Junio",
+  "eventBra": "São Paulo, Brasil – 12 de Junio",
+  "eventCol": "Medellín, Colombia – 18 de Junio",
+  "eventChi": "Santiago de Chile, Chile – 18 de Junio",
+  "eventPer": "Lima, Perú – 25 de Junio",
+  "eventEsp": "Madrid, España – POR CONFIRMAR",
+  "error": "ERROR – Por favor, llena todos los campos.",
+  "errorMsgInput": "Falta este campo",
+  "submit": "Confirmar Registro"
+}
