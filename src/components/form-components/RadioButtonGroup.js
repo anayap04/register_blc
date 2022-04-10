@@ -74,6 +74,7 @@ const RadioButtonGroup = (props) => {
           <div>
             <label htmlFor={field.id}>
               <input
+                className="text-radio-btn" 
                 key={field.id}
                 {...register("event", { required: true })}
                 type="radio"

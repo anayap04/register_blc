@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import logo from '../assets/img/logo.png';
-import titulo from '../assets/img/titulo.png';
+import React from "react";
+import logo from '../../assets/img/logo.png';
+import titulo from '../../assets/img/titulo.png';
 import './header.css'
 import { useScreenClass } from "react-grid-system";
 

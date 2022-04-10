@@ -1,14 +1,19 @@
-import React, { useState } from "react";
-import "./App.css";
-import Header from "./components/Header";
-import Form from "./components/Form";
+import React from "react";
+import Home from './components/Seminar/Home'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import HomeME from "./components/SeminarME/HomeME";
+
+
 
 const App = () => {
   return (
-    <div className="app-container">
-      <Header />
-      <Form />
-    </div>
+    
+     <BrowserRouter basename="/">
+     <Routes>
+       <Route path="/" element={<Home />} />
+       <Route  path="/ME/" element={<HomeME />} />
+     </Routes>
+   </BrowserRouter>
   );
 };
 

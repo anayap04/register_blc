@@ -1,0 +1,22 @@
+.header-container {
+  align-items: center;
+  align-content: center;
+  align-self: flex-start;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-large;
+  color: #8E6324;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.center-title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+

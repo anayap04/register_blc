@@ -7,22 +7,21 @@ import "react-phone-number-input/style.css";
 import "./styles.css";
 
 const PhoneNbrInput = (props) => {
-  const { control, controller, register, errors } = props;
+  const { control, isME } = props;
   const screenClass = useScreenClass();
   const isLargeSize = ["lg", "xl", "xxl"].includes(screenClass);
   return (
     <div
       style={{ paddingLeft: isLargeSize ? 80 : 30 }}
-      className="phone-container"
+      className={isME ? "phone-container-me" : "phone-container"}
     >
       <label htmlFor="phone-input">{formatMsg("wa")}</label>
       <Controller
         name="phone-input"
         control={control}
-        style={{ flexDirection: "row" }}
-        x
         rules={{
           validate: (value) => isValidPhoneNumber(value),
+          required: true,
         }}
         render={({ field: { onChange, value } }) => (
           <PhoneInput

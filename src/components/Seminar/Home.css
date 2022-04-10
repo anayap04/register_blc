@@ -1,0 +1,29 @@
+
+.app-container { 
+  background: url('../../assets/img/background.png') no-repeat center 0 fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+div {
+  margin: 0 0 1rem;
+}
+
+input,
+textarea,
+button {
+  padding: 0.3rem;
+  border: solid 2px black;
+  border-radius: 0.2rem;
+}
+
+textarea {
+  width: 300px;
+  height: 150px;
+}

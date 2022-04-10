@@ -1,14 +1,28 @@
-.form-container {
+.form-container-me {
   color: #F9F5F1;
 }
 
+.form-container-me {
+  color: #8E6324;
+}
 .phone-container {
   color: #F9F5F1;
   margin-top: 35px;
 }
 
+.phone-container-me {
+  color: #AA8546;
+  margin-top: 35px;
+}
+
 .select-text {
   color: #F9F5F1;
+  font-size: larger;
+  margin-bottom: 35px;
+}
+
+.select-text-me {
+  color: #8E6324;
   font-size: larger;
   margin-bottom: 35px;
 }
@@ -28,6 +42,17 @@
  
 }
 
+.phone-container-me .PhoneInputInput { 
+  max-width: 220px;
+  margin-top: -40px;
+  background-color: #FDC2C5;
+  color: #8E6324;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  border-color: rgb(251, 162, 167);
+ 
+}
+
 .text-input {
   width: 220px;
   background-color: rgba(157,	2,	100, 0.5);
@@ -37,7 +62,49 @@
   border-color: #F9F5F1;
 
 }
+
+.text-input-me {
+  width: 220px;
+  background-color: #FDC2C5;
+  color: #8E6324;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  border-color: #8E6324;
+}
+
+.text-input-me:disabled {
+  width: 220px;
+  background-color: #DDA6AA;
+  color: #8E6324;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  border-color: #FCA8AC;
+}
 .error-input {
   color: #FDAAAA;
   font-size: medium;
+}
+
+.error-input-me {
+  color: #700000;
+  font-size: medium;
+}
+
+.text-radio-btn {
+  margin-right: 7px;
+  width: 30px;
+}
+input[type=radio] {
+  border: 0px;
+  margin-top: 2px;
+  height: 17px;
+  border-color: #8E6324;
+}
+
+input[type=checkbox] {
+  border: 0px;
+  height: 20px;
+  width: 20px;
+  padding-top: 20px;
+  border-color: #8E6324;
 }

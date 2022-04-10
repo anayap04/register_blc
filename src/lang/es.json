@@ -2,6 +2,7 @@
   "name": "Nombre(s)",
   "lastName": "Apellido(s)",
   "noUID": "No poseo UID",
+  "noUIDME": "Soy Invitada",
   "uid": "UID",
   "mail": "Correo Electrónico",
   "code": "Código de Compra",
@@ -17,5 +18,7 @@
   "eventEsp": "Madrid, España – POR CONFIRMAR",
   "error": "ERROR – Por favor, llena todos los campos.",
   "errorMsgInput": "Falta este campo",
-  "submit": "Confirmar Registro"
+  "submit": "Confirmar Registro",
+  "modalDesc": "Escoge al registro al que deseas ingresar",
+  "titleME": "Formulario de Pre-registro"
 }
