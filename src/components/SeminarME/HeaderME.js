@@ -2,7 +2,7 @@ import React from "react";
 import logo from '../../assets/img/logoME.png';
 import './headerME.css'
 import { useScreenClass } from "react-grid-system";
-import { formatMsg } from "../utils/formatMsg";
+import { formatMsg } from "../../utils/formatMsg";
 
 const Header = () => {
   const screenClass = useScreenClass();

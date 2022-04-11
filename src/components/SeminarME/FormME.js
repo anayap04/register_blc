@@ -4,7 +4,7 @@ import { useScreenClass } from "react-grid-system";
 import "./FormME.css";
 import Input from "../form-components/Input";
 import PhoneNbrInput from "../form-components/PhoneNbrInput";
-import { formatMsg } from "../utils/formatMsg";
+import { formatMsg } from "../../utils/formatMsg";
 
 const Form = () => {
   const screenClass = useScreenClass();

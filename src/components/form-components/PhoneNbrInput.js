@@ -2,7 +2,7 @@ import React from "react";
 import { useScreenClass } from "react-grid-system";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import { Controller } from "react-hook-form";
-import { formatMsg } from "../utils/formatMsg";
+import { formatMsg } from "../../utils/formatMsg";
 import "react-phone-number-input/style.css";
 import "./styles.css";
 

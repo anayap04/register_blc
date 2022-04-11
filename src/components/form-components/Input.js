@@ -1,6 +1,6 @@
 import React from "react";
 import { useScreenClass } from "react-grid-system";
-import { formatMsg } from "../utils/formatMsg";
+import { formatMsg } from "../../utils/formatMsg";
 import "./styles.css";
 
 const inputField = (arrayFields, register, errors, isME) => {
