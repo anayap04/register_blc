@@ -5,7 +5,7 @@ import "./Form.css";
 import RadioButtonGroup from "../form-components/RadioButtonGroup";
 import Input from "../form-components/Input";
 import PhoneNbrInput from "../form-components/PhoneNbrInput";
-import { formatMsg } from "../utils/formatMsg";
+import { formatMsg } from "../../utils/formatMsg";
 import ModalRegister from "../ModalRegister";
 
 const Form = () => {

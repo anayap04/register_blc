@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router'
 import "./ModalRegister.css";
 import logoME from "../assets/img/logoMEBtn.png";
 import logo from "../assets/img/logo.png";
-import { formatMsg } from "./utils/formatMsg";
+import { formatMsg } from "../utils/formatMsg";
 
 const customStyles = {
   content: {
@@ -25,7 +25,6 @@ const customStyles = {
 
 const ModalRegister = (props) => {
   const [modalIsOpen, setIsOpen] = useState(true);
-  const afterOpenModal = () => (subtitle.style.color = "#fff");
   const closeModal = () => setIsOpen(false);
   const navigate = useNavigate()
   let subtitle;
@@ -34,7 +33,6 @@ const ModalRegister = (props) => {
     <div>
       <Modal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"

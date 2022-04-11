@@ -13,8 +13,8 @@ const Header = () => {
 
   return (
     <div className="header-container">
-      <img src={logo} alt="logo" class="center" style={{width: widthSubtitle}} />
-      <img src={titulo} alt="titulo" class="center-title" style={{width: widthTitle}} />
+      <img src={logo} alt="logo" className="center" style={{width: widthSubtitle}} />
+      <img src={titulo} alt="titulo" className="center-title" style={{width: widthTitle}} />
     </div>
   )
 };
