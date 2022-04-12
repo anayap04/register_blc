@@ -27,7 +27,6 @@ const ModalRegister = (props) => {
   const [modalIsOpen, setIsOpen] = useState(true);
   const closeModal = () => setIsOpen(false);
   const navigate = useNavigate()
-  let subtitle;
 
   return (
     <div>

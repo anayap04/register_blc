@@ -1,4 +1,0 @@
-; <?php exit; ?>
-MYSQL_DATABASE_NAME = "***REMOVED-DB-NAME***"
-MYSQL_USER = "***REMOVED-DB-USER***"
-MYSQL_PASSWORD = "g8IRF#&^"

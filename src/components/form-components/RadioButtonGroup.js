@@ -4,7 +4,7 @@ import { formatMsg } from "../../utils/formatMsg";
 import "./styles.css";
 
 const RadioButtonGroup = (props) => {
-  const { arrayFields, register } = props;
+  const { register } = props;
   const screenClass = useScreenClass();
   const isLagerSize = ["lg", "xl", "xxl"].includes(screenClass);
   const countriesDates = [

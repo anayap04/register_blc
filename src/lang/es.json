@@ -1,7 +1,7 @@
 {
   "name": "Nombre(s)",
   "lastName": "Apellido(s)",
-  "noUID": "No poseo UID",
+  "noUID": "Soy Invitado(a)",
   "noUIDME": "Soy Invitada",
   "uid": "UID",
   "mail": "Correo Electrónico",
@@ -17,8 +17,12 @@
   "eventPer": "Lima, Perú – 25 de Junio",
   "eventEsp": "Madrid, España – POR CONFIRMAR",
   "error": "ERROR – Por favor, llena todos los campos.",
+  "errorNoCode": "ERROR – Código de compra Inválido.",
+  "errorGral": "Ocurrió un error. Intente de nuevo",
   "errorMsgInput": "Falta este campo",
   "submit": "Confirmar Registro",
   "modalDesc": "Escoge al registro al que deseas ingresar",
-  "titleME": "Formulario de Pre-registro"
+  "titleME": "Formulario de Pre-registro",
+  "successRegistry": "¡Su pre-registro se realizó con éxito!. Te esperamos en: ",
+  "modalSuccessDesc": "Su regristro fue exitoso. Revise su correo de confirmación. En caso de "
 }
