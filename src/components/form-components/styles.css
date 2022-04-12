@@ -108,3 +108,25 @@ input[type=checkbox] {
   padding-top: 20px;
   border-color: #8E6324;
 }
+
+
+.modal-overlay { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: rgba(16, 0, 13, 0.7);
+}
+
+.modal-btn {
+  width: 90%;
+  background-color: #CDAD6A;
+  border-color: #CDAD6A;
+  color: #6C4B1D;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
