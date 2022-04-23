@@ -3,7 +3,7 @@
   "lastName": "Apellido(s)",
   "noUID": "Soy Invitado(a)",
   "noUIDME": "Soy Invitada",
-  "uid": "UID",
+  "uid": "UID (Sólo socios)",
   "mail": "Correo Electrónico",
   "code": "Código de Compra",
   "wa": "WhatsApp",
@@ -24,5 +24,5 @@
   "modalDesc": "Escoge al registro al que deseas ingresar",
   "titleME": "Formulario de Pre-registro",
   "successRegistry": "¡Su pre-registro se realizó con éxito!. Te esperamos en: ",
-  "modalSuccessDesc": "Su regristro fue exitoso. Revise su correo de confirmación. En caso de "
+  "modalSuccessDesc": "Regristro exitoso. Revise su bandeja de entrada o spam"
 }

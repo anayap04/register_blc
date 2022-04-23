@@ -5,17 +5,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { IntlProvider } from "react-intl";
 import Spanish from "./lang/es.json";
+import Portuguese from "./lang/pt.json";
 const locale = navigator.language;
 let lang;
-if (locale === "en") {
-  lang = Spanish;
+if (locale === "pt") {
+  lang = Portuguese;
 } else {
   lang = Spanish;
 }
 
 ReactDOM.render(
   <React.StrictMode>
-      <IntlProvider locale={locale} messages={Spanish}>
+      <IntlProvider locale={locale} messages={lang}>
         <App />
       </IntlProvider>
   </React.StrictMode>,
