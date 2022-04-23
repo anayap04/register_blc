@@ -62,6 +62,14 @@
   border-color: #F9F5F1;
 
 }
+.text-input:disabled {
+  width: 220px;
+  background-color: rgba(231, 177, 211, 0.5);
+  color: #F9F5F1;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  border-color: #F9F5F1;
+}
 
 .text-input-me {
   width: 220px;
