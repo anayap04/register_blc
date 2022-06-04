@@ -36,6 +36,7 @@ const Form = () => {
   ];
   const onSubmit = (data) => {
     data.uid = checked ? "0000000" : data.uid;
+    const petition = data.event == '3' ? 'database_br.php' : 'database.php';
     if (availableCodes.includes(data.code)) {
       const bodyToSend = {
         boleto: data.code,
@@ -47,7 +48,7 @@ const Form = () => {
         telefono: data["phone-input"],
       };
       const bodyJson = JSON.stringify(bodyToSend);
-      fetch(`${Constants.ROUTE_API}/database.php`, {
+      fetch(`${Constants.ROUTE_API}/${petition}`, {
         method: "POST",
         body: bodyJson,
       })
