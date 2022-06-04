@@ -34,7 +34,9 @@ const Form = () => {
   ];
 
   const onSubmit = (data) => {
+   
     data.uid = checked ? "0000000" : data.uid;
+    console.log(data);
     if (availableCodesME.includes(data.code)) {
       const bodyToSend = {
         boleto: data.code,
@@ -88,10 +90,12 @@ const Form = () => {
     },
     [invalidCode, errorLabel]
   );
+ 
   return (
     <div>
       {showModal ? <ModalSuccess /> : null}
       <form onSubmit={handleSubmit(onSubmit)}>
+        {console.log(errors)}
         {Object.keys(errors).length !== 0 ? (
           <p
             style={{ paddingLeft: isLargeSize ? 80 : 30 }}
