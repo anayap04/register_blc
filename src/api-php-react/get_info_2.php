@@ -15,7 +15,7 @@
   $isWheel = $_GET['isWheel'];
 
   if ($isWheel) {
-    $sql = "SELECT * FROM registro WHERE evento=$evento AND asistencia = 1 AND uid LIKE '20%'";
+    $sql = "SELECT * FROM registro WHERE evento=$evento AND asistencia = 1 AND boleto LIKE '21%'";
   } else {
     $sql = "SELECT * FROM registro WHERE evento=$evento AND asistencia IS NULL";
   }
