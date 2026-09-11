@@ -1,17 +1,10 @@
-html,
-input,
-button {
-  font-size: 20px;
-  font-family: sans-serif;
-
+html {
+  height: 100%;
 }
-html { 
-  height:100%;
+body {
+  min-height: 100%;
 }
-body { 
-  min-height:100%;
-}
-.app-container-me { 
+.app-container-me {
   background: url('../../assets/img/backgroundME.png') no-repeat center 0 fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -23,19 +16,11 @@ body {
   width: 100%;
 }
 
-div {
-  margin: 0 0 1rem;
-}
-
-input,
-textarea,
-button {
-  padding: 0.3rem;
-  border: solid 2px black;
-  border-radius: 0.2rem;
-}
-
-textarea {
-  width: 300px;
-  height: 150px;
+/* Opaque panel behind the header/form content: the photo behind it has
+   uncontrolled contrast against the brand's dark-on-light ME text colors,
+   so the actual surface under the text is always this flat, verified color
+   (WCAG 2.1 AA, >= 4.5:1 against every ME text color used on it). */
+.content-panel-me {
+  background-color: #F5EFE6;
+  padding: 20px 0 40px;
 }
