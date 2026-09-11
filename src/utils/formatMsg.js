@@ -1,4 +1,4 @@
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 export const formatMsg = (id) => {
   return (
     <FormattedMessage
@@ -9,4 +9,11 @@ export const formatMsg = (id) => {
       }}
     />
   );
+};
+
+// Some ARIA attributes (e.g. a modal's contentLabel) need a plain localized
+// string rather than the JSX FormattedMessage returns from formatMsg above.
+export const useFormatMsgText = (id) => {
+  const intl = useIntl();
+  return intl.formatMessage({ id });
 };

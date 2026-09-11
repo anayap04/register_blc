@@ -1,35 +1,24 @@
 <?php
-  $servername = "***REMOVED-DB-HOST***";
-  $username =  "***REMOVED-DB-USER***";
-  $password = "***REMOVED-DB-PASSWORD***";
-  $dbname = "***REMOVED-DB-NAME***";
+require __DIR__ . '/config.php';
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+$conn = getDbConnection();
 
-  $jsonReqUrl  = "php://input";
-  $reqjson = file_get_contents($jsonReqUrl);
-  $reqjsonDecode = json_decode($reqjson, true);
-  $id = $reqjsonDecode['id'];
+$reqjson = file_get_contents('php://input');
+$reqjsonDecode = json_decode($reqjson, true);
+$id = isset($reqjsonDecode['id']) ? $reqjsonDecode['id'] : '';
 
-  $sql = "UPDATE registro SET asistencia = 1 WHERE boleto='$id'";
-  $result = $conn -> query($sql);
-  $row_cnt = $result->num_rows;
+$stmt = $conn->prepare('UPDATE registro SET asistencia = 1 WHERE boleto = ?');
+$stmt->bind_param('s', $id);
+$success = $stmt->execute();
+$stmt->close();
 
-  if ($conn->query($sql) == TRUE) {
-    header("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: application/json; charset=UTF-8");
+if ($success) {
     http_response_code(201);
-    // tell the user
     echo json_encode(array("message" => "update successful"));
-  } else {
-    header("Content-Type: application/json; charset=UTF-8");
+} else {
     http_response_code(501);
-    // tell the user
     echo json_encode(array("message" => "error updating user"));
-  }
-  $conn->close();
-?>
+}
+
+$conn->close();

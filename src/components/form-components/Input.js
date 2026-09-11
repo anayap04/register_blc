@@ -1,38 +1,38 @@
-import React from "react";
-import { useScreenClass } from "react-grid-system";
 import { formatMsg } from "../../utils/formatMsg";
+import { useIsLargeScreen } from "../../hooks/useIsLargeScreen";
 import "./styles.css";
 
-const inputField = (arrayFields, register, errors, isME) => {
-  return arrayFields.map((field) => {
-    const borderStyle = isME
-      ? { borderColor: errors[field.id] ? "#700000" : "#FBA2A7" }
-      : { borderColor: errors[field.id] ? "#FDAAAA" : "#F9F5F1" };
-    return (
-      <div>
-        <p>{field.name}</p>
-        <input
-          className={isME ? "text-input-me" : "text-input"}
-          key={field.id.toString()}
-          type={field.type}
-          style={borderStyle}
-          {...register(field.id, { required: !field.isDisabled })}
-          disabled={field.isDisabled}
-        />
-        {errors[field.id] && (
-          <p className={isME ? "error-input-me" : "error-input"}>
-            {formatMsg("errorMsgInput")}
-          </p>
-        )}
-      </div>
-    );
-  });
+const InputField = ({ field, register, errors, isME }) => {
+  const hasError = Boolean(errors[field.id]);
+  const borderStyle = isME
+    ? { borderColor: hasError ? "#700000" : "#FBA2A7" }
+    : { borderColor: hasError ? "#FDAAAA" : "#F9F5F1" };
+  const errorId = `${field.id}-error`;
+
+  return (
+    <div>
+      <label htmlFor={field.id}>{field.name}</label>
+      <input
+        id={field.id}
+        className={isME ? "text-input-me" : "text-input"}
+        type={field.type}
+        style={borderStyle}
+        aria-invalid={hasError}
+        aria-describedby={hasError ? errorId : undefined}
+        {...register(field.id, { required: !field.isDisabled })}
+        disabled={field.isDisabled}
+      />
+      {hasError && (
+        <p id={errorId} className={isME ? "error-input-me" : "error-input"}>
+          {formatMsg("errorMsgInput")}
+        </p>
+      )}
+    </div>
+  );
 };
 
-const Input = (props) => {
-  const { register, errors, arrayFields, isME } = props;
-  const screenClass = useScreenClass();
-  const isLargeSize = ["lg", "xl", "xxl"].includes(screenClass);
+const Input = ({ register, errors, arrayFields, isME }) => {
+  const isLargeSize = useIsLargeScreen();
 
   return (
     <div
@@ -44,7 +44,15 @@ const Input = (props) => {
         paddingLeft: isLargeSize ? 80 : 30,
       }}
     >
-      {inputField(arrayFields, register, errors, isME)}
+      {arrayFields.map((field) => (
+        <InputField
+          key={field.id}
+          field={field}
+          register={register}
+          errors={errors}
+          isME={isME}
+        />
+      ))}
     </div>
   );
 };

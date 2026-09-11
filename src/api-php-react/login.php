@@ -1,36 +1,32 @@
 <?php
-  $servername = "***REMOVED-DB-HOST***";
-  $username =  "***REMOVED-DB-USER***";
-  $password = "***REMOVED-DB-PASSWORD***";
-  $dbname = "***REMOVED-DB-NAME***";
+require __DIR__ . '/config.php';
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+$conn = getDbConnection();
 
-  $jsonReqUrl  = "php://input";
-  $reqjson = file_get_contents($jsonReqUrl);
-  $reqjsonDecode = json_decode($reqjson, true);
-  $user = $reqjsonDecode['user'];
-  $pass = $reqjsonDecode['password'];
+$reqjson = file_get_contents('php://input');
+$reqjsonDecode = json_decode($reqjson, true);
+$user = isset($reqjsonDecode['user']) ? $reqjsonDecode['user'] : '';
+$pass = isset($reqjsonDecode['password']) ? $reqjsonDecode['password'] : '';
 
-  $sql = "SELECT * FROM users WHERE user='$user' AND password='$pass'";
-  $result = $conn -> query($sql);
-  $row_cnt = $result->num_rows;
+// NOTE: passwords are compared in plain text against the `users` table.
+// This was not changed as part of this pass -- migrating to password_hash()/
+// password_verify() requires re-hashing existing stored passwords, which is
+// a data migration outside the scope of this change. See README "Known
+// limitations" section.
+$stmt = $conn->prepare('SELECT * FROM users WHERE user = ? AND password = ?');
+$stmt->bind_param('ss', $user, $pass);
+$stmt->execute();
+$result = $stmt->get_result();
+$row_cnt = $result->num_rows;
+$stmt->close();
 
-  if ($row_cnt == 1) {
-    header("Content-Type: application/json; charset=UTF-8");
+header("Content-Type: application/json; charset=UTF-8");
+if ($row_cnt === 1) {
     http_response_code(201);
-    // tell the user
     echo json_encode(array("message" => "login successful"));
-  } else {
-    header("Content-Type: application/json; charset=UTF-8");
+} else {
     http_response_code(501);
-    // tell the user
     echo json_encode(array("message" => "error login"));
-  }
-  $conn->close();
-?>
+}
+
+$conn->close();

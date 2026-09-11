@@ -1,33 +1,15 @@
 <?php
-  $servername = "***REMOVED-DB-HOST***";
-  $username =  "***REMOVED-DB-USER***";
-  $password = "***REMOVED-DB-PASSWORD***";
-  $dbname = "***REMOVED-DB-NAME***";
+require __DIR__ . '/config.php';
+require __DIR__ . '/lib/get_info_query.php';
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+$conn = getDbConnection();
 
-  $evento = $_GET['evento'];
-  $isWheel = $_GET['isWheel'];
+$evento = isset($_GET['evento']) ? (int) $_GET['evento'] : 0;
+$isWheel = !empty($_GET['isWheel']);
 
-  if ($isWheel) {
-    $sql = "SELECT * FROM registro WHERE evento=$evento AND asistencia = 1 AND uid LIKE '000%'";
-  } else {
-    $sql = "SELECT * FROM registro WHERE evento=$evento AND asistencia IS NULL";
-  }
+$rows = fetchRegistrations($conn, $evento, $isWheel, "asistencia = 1 AND uid LIKE '000%'");
 
-  if ($result = $conn -> query($sql)) {
-    $emparray = [];
-    while($row =mysqli_fetch_assoc($result))
-    {
-      $emparray[] = $row; 
-    }
-    echo json_encode($emparray);
-  }
+header("Content-Type: application/json; charset=UTF-8");
+echo json_encode($rows);
 
-  $conn->close();
-?>
+$conn->close();

@@ -17,10 +17,17 @@
   "eventPer": "Lima, Peru – 25 de junho",
   "eventEsp": "Madrid, Espanha – 18 de junho",
   "error": "ERRO - Por favor, preencha todos os campos.",
+  "errorNoCode": "ERRO – Código de compra inválido.",
   "errorGral": "Um erro inesperado ocorreu, tente novamente",
   "errorMsgInput": "Este campo está ausente",
   "submit": "Confirmar Inscrição",
   "modalDesc": "Selecione o evento que você deseja participar.",
+  "modalOptionDefault": "Inscrição internacional",
+  "modalOptionME": "Inscrição México",
+  "logoAlt": "Seminário Pós Convenção IberoAmericana 2022",
+  "tituloAlt": "A Tecnologia do Sucesso",
+  "logoMEAlt": "ME Mujeres Empresarias BLC",
   "titleME": "Formulário de pré-inscrição",
-  "successRegistry": "Sua pré-inscrição foi realizada com sucesso! Esperamos por você"
+  "successRegistry": "Sua pré-inscrição foi realizada com sucesso! Esperamos por você",
+  "modalSuccessDesc": "Inscrição realizada com sucesso. Verifique sua caixa de entrada ou spam"
 }

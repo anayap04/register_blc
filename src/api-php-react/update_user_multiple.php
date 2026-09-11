@@ -1,35 +1,38 @@
 <?php
-  $servername = "***REMOVED-DB-HOST***";
-  $username =  "***REMOVED-DB-USER***";
-  $password = "***REMOVED-DB-PASSWORD***";
-  $dbname = "***REMOVED-DB-NAME***";
+require __DIR__ . '/config.php';
+require __DIR__ . '/lib/QueryHelpers.php';
 
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+$conn = getDbConnection();
 
-  $jsonReqUrl  = "php://input";
-  $reqjson = file_get_contents($jsonReqUrl);
-  $reqjsonDecode = json_decode($reqjson, true);
-  $id = $reqjsonDecode['id'];
-  $userStr = implode("', '", $id);
-  $sql = "UPDATE registro SET asistencia = 0 WHERE boleto in ('$userStr')";
-  $result = $conn -> query($sql);
-  $row_cnt = $result->num_rows;
- 
-  if ($conn->query($sql) == TRUE) {
-    header("Content-Type: application/json; charset=UTF-8");
+$reqjson = file_get_contents('php://input');
+$reqjsonDecode = json_decode($reqjson, true);
+$ids = (isset($reqjsonDecode['id']) && is_array($reqjsonDecode['id']))
+    ? $reqjsonDecode['id']
+    : array();
+
+$success = false;
+if (count($ids) > 0) {
+    $placeholders = buildInPlaceholders(count($ids));
+    $stmt = $conn->prepare("UPDATE registro SET asistencia = 0 WHERE boleto IN ($placeholders)");
+
+    $types = str_repeat('s', count($ids));
+    $bindArgs = array($types);
+    foreach ($ids as $key => $value) {
+        $bindArgs[] = &$ids[$key];
+    }
+    call_user_func_array(array($stmt, 'bind_param'), $bindArgs);
+
+    $success = $stmt->execute();
+    $stmt->close();
+}
+
+header("Content-Type: application/json; charset=UTF-8");
+if ($success) {
     http_response_code(201);
-    // tell the user
     echo json_encode(array("message" => "update successful"));
-  } else {
-    header("Content-Type: application/json; charset=UTF-8");
+} else {
     http_response_code(501);
-    // tell the user
     echo json_encode(array("message" => "error updating user"));
-  }
-  $conn->close();
-?>
+}
+
+$conn->close();

@@ -22,6 +22,11 @@
   "errorMsgInput": "Falta este campo",
   "submit": "Confirmar Registro",
   "modalDesc": "Escoge al registro al que deseas ingresar",
+  "modalOptionDefault": "Registro internacional",
+  "modalOptionME": "Registro México",
+  "logoAlt": "Seminarios Post Convención IberoAmérica 2022",
+  "tituloAlt": "La Tecnología del Éxito",
+  "logoMEAlt": "ME Mujeres Empresarias BLC",
   "titleME": "Formulario de Pre-registro",
   "successRegistry": "¡Su pre-registro se realizó con éxito!. Te esperamos en: ",
   "modalSuccessDesc": "Regristro exitoso. Revise su bandeja de entrada o spam"

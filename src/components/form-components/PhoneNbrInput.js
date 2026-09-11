@@ -1,15 +1,13 @@
-import React from "react";
-import { useScreenClass } from "react-grid-system";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import { Controller } from "react-hook-form";
 import { formatMsg } from "../../utils/formatMsg";
+import { useIsLargeScreen } from "../../hooks/useIsLargeScreen";
 import "react-phone-number-input/style.css";
 import "./styles.css";
 
 const PhoneNbrInput = (props) => {
   const { control, isME } = props;
-  const screenClass = useScreenClass();
-  const isLargeSize = ["lg", "xl", "xxl"].includes(screenClass);
+  const isLargeSize = useIsLargeScreen();
   return (
     <div
       style={{ paddingLeft: isLargeSize ? 80 : 30 }}

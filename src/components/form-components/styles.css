@@ -1,7 +1,6 @@
-.form-container-me {
-  color: #F9F5F1;
-}
-
+/* Some ME-variant brand colors below are darkened from the original
+   design values to meet WCAG AA's 4.5:1 text contrast ratio against the
+   light backdrop in HomeME.css / the pink input chips below. */
 .form-container-me {
   color: #8E6324;
 }
@@ -11,7 +10,7 @@
 }
 
 .phone-container-me {
-  color: #AA8546;
+  color: #7A5B1E;
   margin-top: 35px;
 }
 
@@ -42,11 +41,11 @@
  
 }
 
-.phone-container-me .PhoneInputInput { 
+.phone-container-me .PhoneInputInput {
   max-width: 220px;
   margin-top: -40px;
   background-color: #FDC2C5;
-  color: #8E6324;
+  color: #4A3212;
   border-radius: 0;
   border-width: 0 0 2px;
   border-color: rgb(251, 162, 167);
@@ -74,7 +73,7 @@
 .text-input-me {
   width: 220px;
   background-color: #FDC2C5;
-  color: #8E6324;
+  color: #4A3212;
   border-radius: 0;
   border-width: 0 0 2px;
   border-color: #8E6324;
@@ -83,7 +82,7 @@
 .text-input-me:disabled {
   width: 220px;
   background-color: #DDA6AA;
-  color: #8E6324;
+  color: #4A3212;
   border-radius: 0;
   border-width: 0 0 2px;
   border-color: #FCA8AC;
@@ -96,6 +95,12 @@
 .error-input-me {
   color: #700000;
   font-size: medium;
+}
+
+.event-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .text-radio-btn {
